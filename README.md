@@ -1,8 +1,5 @@
-# React + Vite
+# Code Base ScriptjetPrime.works
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Not only is this my frist attempt at a Reach Website/app... it's also going to be the home to ScriptjetPrime.works.  A website for my hopefuly company Scriptjet Prime, that I'm trying to hose on a Linux Server on a a cloud VM Machine.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I like help, just don't laugh at me (unless I'm laughing at myself lol)
