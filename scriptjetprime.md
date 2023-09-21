@@ -1,56 +1,34 @@
+<<<<<<< HEAD
 # scriptjetPrime.works Flow
 
 ```mermaid
-flowchart BT
+flowchart TD
     classDef fEnd fill:blue
     classDef bEnd fill:purple
     classDef dec fill:orange
     classDef END fill:red
-    classDef Start fill:lightYellow
+    classDef Start fill:Cyan
 
-    A((scriptjetprime.works)):::Start
-    B[\Registered?\]:::fEnd
-    C(Sign In):::bEnd
-    D[\Free Features/]:::fEnd
-    E(Register):::bEnd
-    F[/Registered Features\]:::fEnd
-    G1[\Accept Conditions\]:::fEnd
-    G2[[Privacy Statement</br> Code Of Conduct]]:::bEnd
+    A((scriptjetprime.works)):::Start-->Conditions
+    
+    subgraph Conditions
+        B1[\Accept Conditions\]:::fEnd-->B2[[Privacy Statement</br> Code Of Conduct]]:::bEnd
+    end
+
+    Conditions-.->|Yes|C[\Registered?\]:::fEnd
+    Conditions-.-x|No|H
+    C-.->|No|F[\FreeFeatures/]:::fEnd
+    C-.->|Yes|D(Sign In):::bEnd    
+    E(Register):::bEnd-.->|Yes|D
+    E-.->|no|C
+    D-->|Yes|G[/Registered Features\]:::fEnd
+    D-->|No >=2xs|D
+    D--x|No 3xs|H
+    D-.->|Cancel|C
+    G===o|Logged In|F
+    G-.->|Log Out|F
+    G-.->|Exit|H
+    F-.->|Exit|H
+    F-.->|Log Out|C
     H{{END}}:::END
-
-
-    A-->ConditionsGraph
-    C-.->|Sign In Cancel|B
-    RegistrationGraph-.->|Choose Guest|FreeFeaturesGraph
-    G2==>|Yes|RegistrationGraph
-    RegisteredFeaturesGraph--->|Always|FreeFeaturesGraph    
-    ConditionsGraph==o|No|H
-    RegistrationGraphABC==>|Success|RegisteredFeaturesGraph
-    RegistrationGraphABC==x|Sign In Fail 3xs|H
-    RegisteredFeaturesGraph-.->|Log Out & Stay|FreeFeaturesGraph
-    RegisteredFeaturesGraph-.-o|Log Out & Exit|H
-    H-.->|ReEnter Site|A
-
-    subgraph ConditionsGraph
-        G1==>|Accept Documents|G2
-    end
-
-    subgraph RegistrationGraphABC   
-        C==>|Sign In Fail ...2xs|C  
-        B-.->|Choose Register|E
-        B-.->|Choose Registered|C      
-        E==>|Register Success|C
-        E-.->|Register Cancel|B           
-    end
-
-    subgraph FreeFeaturesGraph
-        D
-    end
-
-    subgraph RegisteredFeaturesGraph
-        F
-    end
-
-
-
 ```
